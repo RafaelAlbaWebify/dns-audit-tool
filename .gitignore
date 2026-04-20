@@ -1,18 +1,23 @@
 # DNS Audit - Generated outputs
 *.csv
 *.log
+DNS_Audit_*
 
 # Temp files
 *.tmp
 *.bak
 *.old
 
-# PowerShell history / debug
+# PowerShell artifacts
 *.ps1xml
 
 # OS files
 .DS_Store
 Thumbs.db
 
-# IDE (optional)
+# IDE
 .vscode/
+
+# Optional
+*.zip
+*.export
