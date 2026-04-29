@@ -1,3 +1,7 @@
+## Context
+
+This project is part of my "Rafael Alba IT Lab", where I build practical tools and environments to improve real-world IT troubleshooting and infrastructure skills.
+
 # DNS Audit Tool
 
 A practical PowerShell-based DNS auditing tool with a WPF GUI, designed for fast operational diagnostics and CSV reporting.
