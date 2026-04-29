@@ -25,6 +25,25 @@ Instead of relying on alerts, this tool helps identify:
 
 This reflects how real-world IT issues often behave: subtle, not obvious, and cumulative.
 
+## Example scenario
+
+A user reports intermittent authentication issues.
+
+Initial checks show:
+- Network connectivity is working
+- The system is reachable
+- No obvious service failure
+
+Running this tool reveals:
+- Missing PTR records for the affected host
+- Forward/reverse mismatch in DNS
+
+This explains inconsistent name resolution, which can impact authentication and service communication.
+
+This type of issue often goes unnoticed because:
+- It does not trigger alerts
+- It appears as a "random" failure
+
 ## Why this exists
 
 Many DNS tools are either too heavyweight for quick troubleshooting or too raw to be immediately useful in day-to-day operations.
