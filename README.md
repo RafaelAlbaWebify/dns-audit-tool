@@ -2,6 +2,29 @@
 
 A practical PowerShell-based DNS auditing tool with a WPF GUI, designed for fast operational diagnostics and CSV reporting.
 
+## Real-world usage
+
+This tool was designed based on common issues found in operational environments:
+
+- DNS records that exist but do not resolve correctly
+- Missing PTR records affecting reverse lookups
+- Stale entries after system changes or decommissioning
+
+These issues often do not generate alerts but can cause:
+- authentication problems
+- connectivity issues
+- application failures
+
+## Troubleshooting mindset
+
+Instead of relying on alerts, this tool helps identify:
+
+- silent inconsistencies
+- mismatched forward/reverse records
+- outdated configurations
+
+This reflects how real-world IT issues often behave: subtle, not obvious, and cumulative.
+
 ## Why this exists
 
 Many DNS tools are either too heavyweight for quick troubleshooting or too raw to be immediately useful in day-to-day operations.
