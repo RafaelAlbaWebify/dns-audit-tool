@@ -1,12 +1,22 @@
 # DNS Audit Tool
 
-PowerShell-based DNS auditing tool with a WPF GUI for operational diagnostics, finding classification, and CSV reporting.
+> OPSCORE DNS Module - DNS evidence and consistency audit for infrastructure support.
 
-This project is part of my Rafael Alba IT Lab: practical IT Operations tools focused on infrastructure troubleshooting, evidence collection, documentation, and repeatable support workflows.
+DNS Audit Tool is my first **OPSCORE** module.
+
+It is a PowerShell-based DNS auditing tool with a WPF GUI for operational diagnostics, finding classification and CSV reporting. I use it to demonstrate practical infrastructure troubleshooting, DNS evidence collection, support documentation and repeatable audit workflows.
+
+This repository remains focused on DNS. It does not try to represent the whole Infrastructure / Production Operations area by itself. The broader flagship is **OPSCORE**, my planned infrastructure and production operations workbench.
+
+## Flagship Area
+
+| Area | Flagship | Module | Target role |
+|---|---|---|---|
+| IPPO - Infrastructure / Production Operations | OPSCORE | DNS Audit Tool | Infrastructure / Production Operations Engineer |
 
 ## Current Status
 
-Working public portfolio version.
+Current status: **working public portfolio version**.
 
 The tool is designed for Windows environments where the operator has access to DNS Server / RSAT tooling and permission to query the target DNS servers. The public version is sanitized for external sharing and uses neutral example values.
 
@@ -21,7 +31,20 @@ DNS issues often appear as unrelated support symptoms:
 - inconsistent name resolution
 - confusing device or service reachability reports
 
-These problems can accumulate after migrations, rebuilds, device replacements, decommissioning, DHCP changes, server moves, or incomplete cleanup work. A lightweight audit gives support teams a faster way to classify findings and decide what needs validation.
+These problems can accumulate after migrations, rebuilds, device replacements, decommissioning, DHCP changes, server moves or incomplete cleanup work.
+
+A lightweight DNS audit gives support teams a faster way to classify findings, validate evidence and decide what needs deeper investigation.
+
+## Core Workflow
+
+```text
+DNS zones and DNS servers
+  -> Read-only DNS queries
+  -> Forward / reverse / alias / stale-record checks
+  -> Finding classification
+  -> CSV evidence exports
+  -> Ticket notes, validation steps or escalation handoff
+```
 
 ## What It Checks
 
@@ -36,11 +59,11 @@ These problems can accumulate after migrations, rebuilds, device replacements, d
 
 ## Example Support Scenario
 
-A user reports intermittent authentication or application access issues.
+**Ticket:** A user reports intermittent authentication or application access issues.
 
 Initial checks show that the system is reachable and basic network connectivity works, but the symptoms remain inconsistent. Running the DNS audit reveals missing PTR records and forward/reverse mismatches for affected hosts.
 
-That evidence helps the support team explain the issue more clearly, validate whether DNS cleanup is needed, and decide the next action without guessing.
+That evidence helps me explain the issue more clearly, validate whether DNS cleanup is needed, and decide the next action without guessing.
 
 ## Features
 
@@ -49,8 +72,8 @@ That evidence helps the support team explain the issue more clearly, validate wh
 - CSV export by finding type and by zone
 - Built-in debug logging
 - Quick mode to skip ping checks
-- Finding classification with severity, category, recommended action, and validation guidance
-- Portfolio-friendly output that can be attached to tickets, handovers, or lab notes
+- Finding classification with severity, category, recommended action and validation guidance
+- Portfolio-friendly output that can be attached to tickets, handovers or lab notes
 
 ## Requirements
 
@@ -103,7 +126,7 @@ See [examples/sample-output.md](examples/sample-output.md) for a readable exampl
 - Forward/reverse mismatches can indicate cleanup issues, but they can also appear in transitional environments.
 - This tool is intended as a fast audit and diagnostics layer, not a replacement for enterprise DNS management platforms.
 
-## Safety and Scope
+## Safety and Boundaries
 
 This tool is read-only from the DNS audit perspective. It is intended to collect evidence and classify possible issues, not to automatically remediate DNS records.
 
@@ -115,9 +138,39 @@ It does not:
 - replace change-control procedures
 - confirm business impact without validation
 
+## OPSCORE Direction
+
+OPSCORE will be my broader Infrastructure / Production Operations workbench.
+
+DNS Audit Tool becomes the first module because DNS evidence is often part of larger incidents involving identity, applications, websites, internal services, certificates, connectivity and escalation.
+
+Future OPSCORE modules may include:
+
+- DNS evidence and consistency audit
+- HTTP / service reachability checks
+- SSL certificate expiry and mismatch checks
+- port / connectivity evidence
+- dependency mapping
+- backup-awareness evidence
+- incident timeline builder
+- RCA and escalation report generator
+
+## B2B / Contract Use
+
+This tool can support future controlled B2B or contract work through my Irish LTD, Webify Digital Solutions Ltd, especially around:
+
+- DNS/domain operational reviews
+- infrastructure troubleshooting evidence
+- support-ticket documentation
+- migration or cleanup validation
+- small-business website/domain health checks
+- escalation-quality reports for technical providers
+
+This repository is a public-safe portfolio tool. It should not be used to change production DNS without validation, approval and proper change control.
+
 ## Homelab / FactoryOps Use
 
-This project is a good fit for the planned FactoryOps homelab. It can be used to simulate and document realistic DNS-related support scenarios, such as:
+This project is a good fit for my FactoryOps-style homelab work. It can be used to simulate and document realistic DNS-related support scenarios, such as:
 
 - stale host records after device replacement
 - missing PTR records causing confusing support evidence
@@ -125,18 +178,19 @@ This project is a good fit for the planned FactoryOps homelab. It can be used to
 - shared IP or alias confusion during service migration
 - application access issue where DNS evidence helps escalation
 
-A future lab scenario should include the simulated issue, the audit output, the support ticket notes, the likely cause, validation steps, and the final runbook entry.
+A future lab scenario should include the simulated issue, the audit output, the support ticket notes, the likely cause, validation steps and the final runbook entry.
 
 ## Portfolio Value
 
-This project demonstrates practical PowerShell tooling, infrastructure troubleshooting, DNS support awareness, evidence collection, CSV reporting, and support-focused documentation.
+This project demonstrates practical PowerShell tooling, infrastructure troubleshooting, DNS support awareness, evidence collection, CSV reporting and support-focused documentation.
 
-It supports my public positioning around IT Operations, Systems Support, Microsoft 365 / Entra ID troubleshooting, infrastructure diagnostics, and practical automation.
+It supports my public positioning around IT Operations, Infrastructure / Production Operations, Microsoft 365 / Entra ID troubleshooting, application support evidence and practical automation.
 
 ## Next Improvements
 
 - Add screenshots of the WPF GUI.
 - Add a short demo walkthrough using sanitized sample data.
+- Add an OPSCORE roadmap document.
 - Add a FactoryOps homelab DNS mismatch scenario.
 - Add example ticket notes and escalation notes based on generated CSV findings.
 - Add a small validation checklist for reviewing findings safely.
