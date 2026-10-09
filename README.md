@@ -18,6 +18,14 @@ DNS problems often appear as unrelated support symptoms:
 
 The tool provides a repeatable way to gather evidence before deciding whether cleanup, deeper investigation or escalation is required.
 
+## Operational origin
+
+DNS Audit Tool grew from a real infrastructure troubleshooting need in an industrial production environment with long-standing inherited DNS inconsistencies. Those inconsistencies were contributing to unreliable name resolution and communication problems between several business and production applications.
+
+The initial purpose was to make the investigation repeatable: collect DNS evidence at scale, identify forward/reverse inconsistencies and potentially stale records, and produce structured lists that could be reviewed with the L3 infrastructure team. That evidence then supported controlled remediation by area and in batches rather than ad-hoc record changes.
+
+The public repository is a sanitized and evolved version of that approach. It contains no employer, customer, internal hostname, production-zone or production-network data.
+
 ## Workflow
 
 ```text
@@ -99,7 +107,7 @@ The audit is read-only. It does not:
 
 ## Portfolio value
 
-This project demonstrates practical PowerShell GUI work, DNS troubleshooting awareness, structured evidence collection, finding classification and support-ready reporting.
+This project demonstrates practical PowerShell GUI work, DNS troubleshooting awareness, structured evidence collection, finding classification, L2/L3 collaboration and support-ready reporting.
 
 ## License
 
